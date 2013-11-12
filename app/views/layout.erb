@@ -22,6 +22,8 @@
     <% if session[:token] %>
     <a href="/signout"><button id='signout'>sign out</button></a>
     <a href="/tweet"><button id='tweet_now'>Tweet now!</button></a>
+    <a href="/future_tweet"><button id='schedule_tweet'>Schedule a tweet for the future!</button></a>
+
     <% else %>
     <a href="/request"><button id='signin'>Sign in with Twitter</button></a>
     <% end %>

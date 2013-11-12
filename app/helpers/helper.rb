@@ -19,7 +19,7 @@ helpers do
   end
 
   def client
-    @client = Twitter::Client.new( :oauth_token => session[:token], :oauth_token_secret => session[:secret])
+    @client = Twitter::Client.new( :oauth_token => @user.token, :oauth_token_secret => @user.secret)
   end
 
 end

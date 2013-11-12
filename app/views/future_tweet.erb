@@ -1,6 +1,6 @@
 <div class='container'>
-  <h2>You can write a tweet here:</h2>
-  <form id='tweet_form' action="/tweet/new" method='POST' data-user-id='<%= @user.id %>'>
+  <h2>Write your tweet here:</h2>
+  <form id='tweet_form' action="/future_tweet" method='POST' data-user-id='<%= @user.id %>'>
     <textarea class='input' name="text" cols="30" rows="5" placeholder='tweet goes here...'></textarea><br>
     <input class='input' type="submit" value='tweet!'>
   </form>
