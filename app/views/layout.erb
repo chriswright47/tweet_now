@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- 
+  <!--
     normalize.css removes cross-browser differences in defaults, e.g.,
     differences in how form elements appear between Firefox and IE
     See: http://necolas.github.com/normalize.css/
@@ -21,7 +21,7 @@
   <div class='top-header'>
     <% if session[:token] %>
     <a href="/signout"><button id='signout'>sign out</button></a>
-    <a href="/tweet"><button id='tweet_now'>Tweet now!</button></a>
+    <!-- <a href="/auth"><button id='tweet_now'>Tweet now!</button></a> -->
     <!-- <a href="/future_tweet"><button id='schedule_tweet'>Schedule a tweet for the future!</button></a> -->
 
     <% else %>

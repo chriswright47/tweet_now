@@ -1,6 +1,6 @@
-get '/tweet' do
-  erb :tweet_now
-end
+# get '/tweet' do
+#   erb :tweet_now
+# end
 
 get '/' do
   erb :index
