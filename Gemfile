@@ -1,11 +1,12 @@
-source :rubygems
+source 'https://rubygems.org'
+
 
 # PostgreSQL driver
 gem 'pg'
 
 # Sinatra driver
 gem 'sinatra'
-gem 'sinatra-contrib'
+# gem 'sinatra-contrib'
 
 # Use Thin for our web server
 gem 'thin'
@@ -17,10 +18,12 @@ gem 'rake'
 
 gem 'shotgun'
 
+gem 'oauth'
+gem 'twitter'
+
 group :test do
   gem 'faker'
   gem 'rspec'
 end
 
-gem 'twitter'
-gem 'oauth'
+
