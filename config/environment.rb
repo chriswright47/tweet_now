@@ -16,7 +16,6 @@ require 'active_record'
 require 'logger'
 
 require 'sinatra'
-require "sinatra/reloader" if development?
 
 require 'erb'
 
@@ -36,11 +35,11 @@ Dir[APP_ROOT.join('app', 'helpers', '*.rb')].each { |file| require file }
 # Set up the database and models
 require APP_ROOT.join('config', 'database')
 
-if Sinatra::Application.development?
-  twitter_data = YAML.load_file(APP_ROOT.join('config', 'twitter.yml'))
-  ENV['CONSUMER_KEY'] = twitter_data['consumer_key']
-  ENV['CONSUMER_SECRET'] = twitter_data['consumer_secret']
-end
+# if Sinatra::Application.development?
+#   twitter_data = YAML.load_file(APP_ROOT.join('config', 'twitter.yml'))
+#   ENV['CONSUMER_KEY'] = twitter_data['consumer_key']
+#   ENV['CONSUMER_SECRET'] = twitter_data['consumer_secret']
+# end
 
 Twitter.configure do |config|
   config.consumer_key = ENV['CONSUMER_KEY']
