@@ -40,6 +40,6 @@ get '/signout' do
   redirect '/'
 end
 
-get '/future_tweet' do
-  erb :future_tweet
-end
+# get '/future_tweet' do
+#   erb :future_tweet
+# end
