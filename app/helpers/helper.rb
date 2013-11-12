@@ -2,7 +2,7 @@ helpers do
 
   def create_consumer
     OAuth::Consumer.new(
-      'CONSUMER_KEY', 'CONSUMER_SECRET', :site => 'https://api.twitter.com')
+      ENV['CONSUMER_KEY'], ENV['CONSUMER_SECRET'], :site => 'https://api.twitter.com')
   end
 
   def request_token
