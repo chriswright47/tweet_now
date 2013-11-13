@@ -5,4 +5,12 @@
     <input class='input' type="submit" value='tweet!'>
   </form>
 
+
+    <form id='future_tweet_form' action="/future_tweet/new" method='POST' data-user-id='<%= @user.id %>'>
+      <h3>tweet in the future!</h3>
+    <textarea class='input' name="text" cols="30" rows="5" placeholder='tweet goes here...'></textarea><br>
+    <input type='text' placeholder='hours in the future' name='time'>
+    <input class='input' type="submit" value='tweet!'>
+  </form>
+
 </div>

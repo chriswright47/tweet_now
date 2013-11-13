@@ -2,6 +2,8 @@
 #   erb :tweet_now
 # end
 
+require 'debugger'
+
 get '/' do
   erb :index
 end
@@ -25,19 +27,44 @@ end
 
 post '/tweet/new' do
   @user = User.find(params[:user_id])
-  tweet = client.update(params[:text])
-  if tweet
-    @tweet = tweet.text
-    erb :success, :layout => false
-  else
-    status 500
-    'Something bad happened :('
-  end
+  job_id = @user.tweet(params[:text])
+  # job_id = @user.future_tweet(params[:text], 1)
+  # tweet = client.update(params[:text])
+  # if tweet
+  #   @tweet = tweet.text
+  #   erb :success, :layout => false
+  # else
+  #   status 500
+  #   'Something bad happened :('
+  # end
+end
+
+
+post '/future_tweet/new' do
+  @user = User.find(params[:user_id])
+  # job_id = @user.tweet(params[:text])
+  job_id = @user.future_tweet(params[:text], params[:time].to_i)
+  # tweet = client.update(params[:text])
+  # if tweet
+  #   @tweet = tweet.text
+  #   erb :success, :layout => false
+  # else
+  #   status 500
+  #   'Something bad happened :('
+  # end
 end
 
 get '/signout' do
   session.clear
   redirect '/'
+end
+
+get '/status/:job_id' do
+  if job_is_complete(params[:job_id])
+    erb :success, :layout => false
+  else
+    'job has not been completed yet'
+  end
 end
 
 # get '/future_tweet' do
